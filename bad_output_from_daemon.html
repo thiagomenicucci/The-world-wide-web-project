@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BadOutput -- /User</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Bad output from the daemon</h1>
+
+    <p>These are some ideas:</p>
+
+    <ul>
+        <li>Try <a href="">running the server from the terminal</a> .</li>
+        <li>Check the HTML source the daemon produces with</li>
+
+        <pre>
+        www -source http://myost.domain:80/
+        </pre>
+
+        <li>Try <a href="">telnetting to the daemon</a> and simulating the client:</li>
+
+        <pre>
+            > telnet myhost.domain 80
+            Connected to myhost.domain on port 80
+            Escape is ^[
+            GET /documentname
+        </pre>
+    </ul>
+
+    <p><i><a href="disclaimer.html">Tim BL</a></i></p>
+    
+</body>
+</html>

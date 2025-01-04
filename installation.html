@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing WorldWideWeb on the NeXT</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Installation</h1>
+    <p>To install the <a href="WWW_user_guide.html" target="_self">WorldWideWeb</a> program properly you will need to be superuser. It is possible to use take a private copy of the program (<a href="">see below</a>) if you really have to, but for a system-wide copy, the steps are as follows. If you are at CERN, you should use NFS to remotely mount the files (see <a href="using_NFS.html" target="_self">explanation</a> ). REMEMBER THE dwrite you need <a href="">below</a>.</p>
+    <ul>
+        <li>Make a suitable directory to hold the release. cd to that directory.</li>
+        <li id="tar_file" >Get the tar file using anonymous FTP .</li>
+        <li>Take the .tar file using ftp or whatever (see distribution ) and unwrap it using tar .</li>
+        <li>Become superuser</li>
+        <li >Make a soft link from your LocalApps directory to the file WorldWideWeb itself .</li>
+    </ul>
+    <p>The commands to do this are therefore (inserting the full path name of your directory where indicated, and the version number for vvv):-</p>
+    <pre><code>
+        tar -xf WWWNeXTStepEditor_vvv.tar
+        su root
+        mkdir /LocalApps
+        ln -s /(fullpathname)/WorldWideWeb.app /LocalApps
+    </code></pre>
+    <p>Don't do the mkdir step if you already have a /LocalApps directory</p>
+
+    <h3>Making a private copy</h3>
+    <p>If you don't have privilege, and you don't have the ear of someone who does, it is possible to take a private copy of the program. It is better, of course, to get it installed system-wide, but if desperate, procede as above but instead link the application to your own directory, and take a copy of the system default file as your own default file. The commands are therefore:-</p>
+    <pre><code>
+        tar -xf WWWMeXTStepEditor_vvv.tar
+        ln -s /(fullpathname)/WorldWideWeb ~/Apps
+    </code></pre>
+
+    <h3 id="personal_setup">Personal setup</h3>
+    <p>Each person who wants to use it on the machine, whether it is a system copy or his private copy, must before he can use WWW:</p>
+    <ul>
+        <li>Set his default NewsHost (can this be done system-wide?) to be the name of a server running the NNTP protocol. If he is already using "News" this will be unnecessary, as WWW will use News's default. (At CERN only, at the time of writing, a suitable news host was cernvax.cern.ch.) The shell command is</li>
+    </ul>
+    <pre><code>
+        dwrite WorldWideWeb NewsHost (hostname)
+    </code></pre>
+    <p>You (each user) may later want to create your own WWW subdirectory under your home directory. In that subdirectory you may like to put :</p>
+    <ul>
+        <li>A personal hypertext home page. This is a file default.html which will be displayed whenever the application is started. Create it by starting WWW to load the system default home page, editing it, then using the " Save a copy in..HTML.. " item in the Window menu, and selecting your private WWW subdirectory.</li>
+        <li>A personal blank note. This is a file blank.html which will be used as a template whenever you create a new hypertext file with the " New file " or " Link to new " commands. Create it by using the " New file " item in the "Window" menu and selecting your personal $(HOME)/WWW/blank.html as filename.</li>
+        <li>A default style sheet .</li>
+    </ul>
+    
+
+
+    
+</body>
+</html>

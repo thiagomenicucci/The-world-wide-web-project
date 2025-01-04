@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldWideWeb Address Formats for Files</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>W3 addresses of files</h1>
+    <p>The format of a hypertext reference to a file is an extension of the unix naming system. The full explicit format is:</p>
+    <p>file : // node / directories / name</p>
+    <p>The actual protocols used by the client depend on the implementation of the browser and the environment. Typically, the browser will check to see whether the node is the local node, or a node for which files are available mounted in some form of distributed file system. If neither of these are the case, then the browser may try rpc, anonymous FTP or other protocols.</p>
+
+    <h2>Examples</h2>
+    <pre>
+        <code> file://cernvax.cern.ch/usr/lib/WWW/defaut.html</code>
+    </pre>
+    <p>This is a fully qualified file name.</p>
+
+    <pre>
+        <code>fred.html</code>
+    </pre>
+
+    <p>This <a href="relative_naming.html">relative name</a> , used within a file, will refer to a file of the same node and directory as that file, but the name fred.html.</p>
+
+    <h2>Improvements: Directory access</h2>
+    <p>The final file name should be optional. If the address ends with a '/', the browser should retrieve the contents of the specified directory and generate a page of virtual hypertext pointing to its contents. In addition, it could display an information file contained in that directory, if any is present. Suggested file names to search for in order : README.html, *README*.html, README, *README*, *readme*.</p>
+
+
+    
+</body>
+</html>

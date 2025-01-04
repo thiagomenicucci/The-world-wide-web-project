@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAISGate -- /Daemon</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>The W.A.I.S - WWW gateway</h1>
+
+    <p>This is an example of a WWW <a href="W3_server_software.html">server</a> and a <a href="wais.html">WAIS</a> client. It uses the common WWW daemon <a href="W3_server_software.html">sources</a> and also has one extra file, <a href="">WAISGate.c</a> The <a href="www_daemon_user_guide.html">command line syntax</a> is the same as for the normal W3 daemon, except that a rule file is not used. (No -r or -R options).</p>
+    <p>See a summary of <a href="data_source.html">some data available through the gateway</a> .</p>
+
+    <h2>WSRC files</h2>
+
+    <p>The gateway keeps a cache of WAIS "source" files. These are files</p>
+    <p>describing WAIS servers. They are normally picked up automatically by searching a "directory of servers" index. Once the gateway has picked up a desciption of a server, it uses the description to describe the server to those who follow links to it.</p>
+    <p>These source files are converted into hypertext, and are kept in the directory /usr/local/lib/WAIS under the server name, port, and database name.</p>
+    <p>To add an extra source file to this cache by hand, feed it as standard input to the ParseWSRC program.</p>
+
+    <p>_________________________________________________________________</p>
+
+    <p><a href="disclaimer.html">Tim BL</a></p>
+    
+</body>
+</html>

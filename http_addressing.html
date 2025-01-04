@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTPAddressing -- /Addressing</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>HTTP Addressing</h1>
+
+    <p>With an access code of http:, a protocol introduced for the WWW initiative is used to acquire data from a server. This is the "Hypertext Transfer protocol", <a href="http_as_implemented_in_WWW.html">HTTP</a> , a simple search and retrieve (S and R) protocol.</p>
+
+    <p>The syntax of an http address is, with [] indicating optional parts (see <a href="W3_address_syntax_BNF.html#httpaddress">BNF description</a> ),</p>
+
+    <pre>
+                http : // hostname [ : port ] / path [ ? searchwords ]
+    </pre>
+
+    <p>for example, the following are valid addresses:</p>
+
+    <pre>
+                http://info.cern.ch/hypertext/WWW/TheProject.html
+                http://crnvmc.cern.ch/FIND?sgml+examples
+    </pre>
+
+    <p>HTTP addresses conform to the WWW conventions, including the possibility of using the <a href="address_for_an_index_search.html">search format</a> . The significance of the items in the path part of the document name is completely up to the server. Different paths may be used to select different databases, different views of the same database, etc.</p>
+
+    <dt>hostname</dt>
+    <dd>This is the name of the server in internet form. A numeric form (e.g. 128.141.201.74) may be used, by the domain name form (e.g. info.cern.ch) is preferred. The hostname is mandatory.</dd>
+
+    <dt>port</dt>
+    <dd>This is a numeric port number. If a non-numeric string is used, it must be a defined service name. Note that as there is no central repository for service names (they are defined locaaly for each host), a service name is NOT an appropriate way to specify a port number for a hypertext address. If the port number is omitted the preceding colon must also be omitted. In this case, port number 2784 is assumed [This may change!].</dd>
+
+    <p>See also: <a href="W3_naming_schemes.html">WWW addressing in general</a> , <a href="hypertext_transfer_protocol.html">HTTP protocol</a> .________________________________________<br><i><a href="disclaimer.html">Tim BL</a></i></p>
+    
+</body>
+</html>

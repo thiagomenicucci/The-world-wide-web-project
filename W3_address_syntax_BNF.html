@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNF -- /Addressing</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>W3 address syntax: BNF</h1>
+
+    <p>This is a BNF-like description of the <a href="W3_naming_schemes.html">W3 addressing syntax</a> . We use a vertical line "|" to indicate alternatives, and [brackets] to indicate optional parts. Spaces are representational only: no spaces are actually allowed within a W3 address. Single letters stand for single letters. All words of more than one letter below are entites described elsewhere in the syntax description. (Entity names are here linked to their definitions, probably making this difficult to read with the line mode browser.)</p>
+
+    <p>An absolute address specified in a link is an <a href="#anchoraddress">anchoraddress</a> . The address which is passed to a server is a <a href="#docaddress">docaddress</a> .</p>
+
+    <dt id="anchoraddress">anchoraddress</dt>
+    <dd><a href="#docaddress">docaddress</a> [ # <a href="#anchor">anchor</a> ]</dd>        
+
+    <dt id="docaddress">docaddress</dt>
+    <dd><a href="#httpaddress">httpaddress</a> | <a href="#fileaddress">fileaddress</a> | <a href="#newsaddress">newsaddress</a> | <a href="#telnetaddress">telnetaddress</a> | <a href="#prosperoaddress">prosperoaddress</a> | <a href="#gopheraddress">gopheraddress</a> | <a href="#waisaddress">waisaddress</a></dd>    
+
+    <dt id="httpaddress">httpaddress</dt>
+    <dd>h t t p : / / <a href="#hostport">hostport</a> [ / <a href="#path">path</a> ] [ ? <a href="#search">search</a> ]</dd>
+
+    <dt id="prosperoaddress">prosperoaddress</dt>
+    <dd>p r o s p e r o : / / <a href="#hostport">hostport</a> / <a href="#path">path</a></dd>
+
+    <dt id="fileaddress">fileaddress</dt>
+    <dd>f i l e : / / <a href="#host">host</a> / <a href="#path">path</a></dd>
+
+    <dt id="newsaddress">newsaddress</dt>
+    <dd>n e w s : <a href="#groupart">groupart</a></dd>
+
+    <dt id="waisaddress">waisaddress</dt>
+    <dd>waisindex | waisdoc</dd>
+
+    <dt>waisindex</dt>
+    <dd>w a i s : / / <a href="#hostport">hostport</a> / <a href="#database">database</a> [ ? <a href="#search">search</a> ]</dd>
+
+    <dt>waisdoc</dt>
+    <dd>w a i s : / / <a href="#hostport">hostport</a> / <a href="#database">database</a> / <a href="#wtype">wtype</a> / <a href="#digits">digits</a> / <a href="#path">path</a></dd>
+
+    <dt id="groupart">groupart</dt>
+    <dd>* | <a href="#group">group</a> | <a href="#article">article</a></dd>
+
+    <dt id="group">group</dt>
+    <dd><a href="#ialpha">ialpha</a> [ . <a href="#group">group</a> ]</dd>
+
+    <dt id="article">article</dt>
+    <dd><a href="#xalphas">xalphas</a> @ <a href="#host">host</a></dd>
+
+    <dt id="database">database</dt>
+    <dd><a href="#xalphas">xalphas</a></dd>
+
+    <dt id="wtype">wtype</dt>
+    <dd><a href="#xalphas">xalphas</a></dd>
+
+    <dt id="telnetaddress">telnetaddress</dt>
+    <dd>t e l n e t : / / [ <a href="#user">user</a> @ ] <a href="#hostport">hostport</a></dd>
+
+    <dt id="gopheraddress">gopheraddress</dt>
+    <dd>g o p h e r : / / <a href="#hostport">hostport</a> [/ <a href="#gtype">gtype</a> [ / <a href="#selector">selector</a> ] ] [ ? <a href="#search">search</a> ]</dd>
+
+    <dt id="hostport">hostport</dt>
+    <dd><a href="#host">host</a> [ : <a href="#port">port</a> ]</dd>
+
+    <dt id="host">host</dt>
+    <dd><a href="#hostname">hostname</a> |<a href=""> hostnumber</a></dd>
+
+    <dt id="hostname">hostname</dt>
+    <dd><a href="">ialpha</a> [ . <a href="hostnumber">hostname</a> ]</dd>
+
+    <dt id="hostnumber">hostnumber</dt>
+    <dd><a href="#digits">digits</a> . <a href="#digits">digits</a> . <a href="#digits">digits</a> . <a href="#digits">digits</a></dd>
+
+    <dt id="port">port</dt>
+    <dd><a href="#digits">digits</a></dd>
+
+    <dt id="selector">selector</dt>
+    <dd><a href="#path">path</a></dd>
+
+    <dt id="path">path</dt>
+    <dd><a href="#void">void</a> | <a href="#xalphas">xalphas</a> [ / <a href="#path">path</a> ]</dd>
+
+    <dt id="search">search</dt>
+    <dd><a href="#xalphas">xalphas</a> [ + <a href="#search">search</a> ]</dd>
+
+    <dt id="user">user</dt>
+    <dd><a href="#xalphas">xalphas</a></dd>
+
+    <dt id="anchor">anchor</dt>
+    <dd><a href="#xalphas">xalphas</a></dd>
+
+    <dt id="gtype">gtype</dt>
+    <dd><a href="#xalpha">xalpha</a></dd>
+
+    <dt id="xalpha">xalpha</dt>
+    <dd><a href="#alpha">alpha</a> | $ | _ | @ | ! | % | ^ | & | * | ( | ) | . | <a href="#digit">digit</a></dd>
+
+    <dt id="xalphas">xalphas</dt>
+    <dd><a href="#xalpha">xalpha</a> [ <a href="#xalphas">xalphas</a> ]</dd>
+
+    <dt id="ialpha">ialpha</dt>
+    <dd><a href="#alpha">alpha</a> [ <a href="#xalphas">xalphas</a> ]</dd>
+
+    <dt id="alpha">alpha</dt>
+    <dd>a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z</dd>
+
+    <dt id="digit">digit</dt>
+    <dd>0 |1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</dd>
+
+    <dt id="digits">digits</dt>
+    <dd><a href="#digit">digit</a> [ <a href="#digits">digits</a> ]</dd>
+
+    <dt id="alphanum">alphanum</dt>
+    <dd><a href="#alpha">alpha</a> | <a href="#digit">digit</a></dd>
+
+    <dt id="alphanums">alphanums</dt>
+    <dd><a href="#alphanum">alphanum</a> [ <a href="#alphanums">alphanums</a> ]</dd>
+
+    <dt id="void">void</dt>
+    
+    <p>See also: General <a href="W3_naming_schemes.html">description</a> of this syntax, <a href="escaping_illegal_characters.html">Escaping</a> conventions.______________________________________________________<br><i><a href="disclaimer.html">Tim BL</a></i> </p>
+
+</body>
+</html>

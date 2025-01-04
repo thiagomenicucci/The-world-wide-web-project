@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging -- /User</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Debugging the daemon</h1>
+
+    <p>Suppose you think you have <a href="installing_basic_httop_daemon.html">installed</a> a <a href="www_daemon_user_guide.html">W3 server</a> but it doesn't work. That is, you have followed the <a href="installing_basic_httop_daemon.html">installation instructions</a> and the test at the end fails. Here we assume you have used port 80. If you have a situation not handled by this problem-solving guide, please mail me.</p>
+
+    <p>Type</p>
+
+    <pre>
+        www http://myhost.domain:80/
+    </pre>
+
+    <p>What happens?</p>
+
+    <ul>
+        <li><a href="cant_connect_to_server.html">"Cannot connect to information server" message</a> .</li>
+        <li><a href="you_get_an_empty_document.html">An empty document is displayed</a></li>
+        <a href="document_address_invalid.html">
+            <li>A document containing the words "Document address invalid or access not authorised" is displayed.</li>
+        </a>
+        <li><a href="bad_output_from_daemon.html">A document is displayed, but not what you wanted the server to give in response to that document name</a> (/)</li>
+    </ul>
+
+    <p>_________________________________________________________________<br><i><a href="disclaimer.html">Tim BL</a></i></p>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escaping -- /Addressing</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Escaping illegal characters</h1>
+
+    <p>The W3 address <a href="W3_naming_schemes.html">syntax</a> allows a <a href="W3_address_syntax_BNF.html#path">path</a> to contain most printable ASCII characters, but some are inevitably used for punctuation are excluded. W3 addresses are sometimes used to represent addresses in some other space. This happens when an HTTP server, for example, uses file names as its document names, or when addresses from some other protocol (Gopher, WAIS, etc) are mapped into the W3 web.</p>
+
+    <p>In these cases, a convention is normally used to map illegal characters in these "foreign" names onto the allowed set.</p>
+
+    <p>In the case of an HTTP server, any mapping may be used.</p>
+
+    <p>A suitable convention is that a percent sign (%) followed by two hexadecimal digits (0-9 or a-f) stands for the single character with ASCII hexadecimal code represented by those two digits (Most significant digit first).</p>
+
+    <p>A percent sign itself must therefore be represented by %25, as 25 hex is the ASCII code for "%".</p>
+
+    <p>_________________________________________________________________</p>
+
+    <p><i><a href="disclaimer.html">Tim BL</a></i></p>
+    
+</body>
+</html>

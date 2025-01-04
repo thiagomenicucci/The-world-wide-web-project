@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation -- /User</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Installing te basic httop daemon</h1>
+
+    <p>The usual way to install a daemon is to either run it from the bootstrap command file (for example /etc/rc) so that it runs continuously, or to set up the internet daemon (inetd) to run it when a call comes in.</p>
+    <p>Remember to make a <a href="rule_file.html">rule file</a> unless you explicitly supress it with the -R option.</p>
+    
+    <h2>Using the Internet daemon</h2>
+
+    <p>There is a csh script to do this for a BSD unix system. You might want to edit it to run on other systems.</p>
+    <p>Otherwise, just follow the <a href="installing_a_daemon_under_inetd.html">instructions for installing a server under the internet daemon</a>.</p>
+
+    <h2>Log file</h2>
+
+    <p>If a log file is required, make sure that the user name under which the daemon is run has the right to write the file<br><i><a href="disclaimer.html">Tim BL</a></i></p>
+    
+</body>
+</html>

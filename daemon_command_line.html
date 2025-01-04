@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/Net/dxcern/userd/tbl/hypertext/WWWW/Daemon/User/...</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Daemon Command Line</h1>
+
+    <p>The command line options for the <a href="W3_server_software.html">simple www server</a> are as follows.</p>
+
+    <dt>-a address</dt>
+    <dd>Specify the port number. The address should be in the form "*:80" with 80 replaced with the desired port number, which can be different for tests for instance. Note that the string must be quoted because of the asterisk. If this option is not given, the daemon assumes that it has been run by inetd, and uses stdin and stdout as its communication channel . Note that port numbers under 1024 are <a href="priviliged_ports.html">privileged</a> .</dd>
+
+    <dt>-l file</dt>
+    <dd>Log all calls to the given file. The file is appended to if it already exists.</dd>
+
+    <dt>-v</dt>
+    <dd>Verbose mode. Copious trace messages are written to the standard output stream. Mainly for debugging.</dd>
+
+    <dt>-r file</dt>
+    <dd>Load a <a href="rule_file.html">rule file</a> . The rules are added after any rules already loaded. Inhibits the loading of the default rule file.</dd>
+
+    <dt>-R</dt>
+    <dd>Inhibit the loading of the default rule file. Warning: running without a rule file normally poses a security problem.</dd>
+
+    <p>_________________________________________________________________<br><a href="disclaimer.html">Tim BL</a></p>
+    
+</body>
+</html>

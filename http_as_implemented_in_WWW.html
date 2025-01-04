@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HTTP Protocol As Implemented in W3</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>HTTP as implemented in WWW</h1>
+    <p>This document defines the Hypertext Transfer protocol (HTTP) as currently implemented by the <a href="index.html" >WorldWideWeb</a> initaitive software. This is a subset of the <a href="hypertext_transfer_protocol.html" >proposed</a> full HTTP protocol. No client profile information is transferred with the query. Future HTTP protocols will be back-compatible with this protocol.</p>
+    <p>The definition of this protocol is in the public domain (see <a href="policy.html" >policy</a> ).</p>
+    <p>The protocol uses the normal internet-style telnet protocol style on a TCP-IP link. The following describes how a client acquires a (hypertext) document from an HTTP server, given an HTTP document <a href="http_addressing.html" >address</a> .</p>
+
+    <h2>Connection</h2>
+    <p>The client makes a TCP-IP connection to the host using the <a href="W3_address_syntax_BNF.html#hostname" >domain name</a> or <a href="W3_address_syntax_BNF.html#hostname" >IP number</a> , and the <a href="W3_address_syntax_BNF.html#hostname" >port number</a> given in the address.</p>
+    <p>If the port number is not specified, 80 is always assumed for HTTP.</p>
+    <p>The server accepts the connection.</p>
+    <p>Note: HTTP currently runs over TCP, but could run over any connection-oriented service. The interpretation of the protocol below in the case of a sequenced packet service (such as DECnet(TM) or ISO TP4) is that that the request should be one TPDU, but the response may be many.</p>
+
+    <h2>Request</h2>
+    <p>The client sends a document request consisting of a line of ASCII characters terminated by a CR LF (carriage return, line feed) pair. A well-behaved server will not require the carriage return character.</p>
+    <p>This request consists of the word "GET", a space, the <a href="W3_address_syntax_BNF.html#httpaddress" >document address</a> , omitting the "http:, host and port parts when they are the coordinates just used to make the connection. (If a gateway is being used, then a full document address may be given specifying a different naming scheme).</p>
+    <p>The search functionality of the protocol lies in the ability of the addressing syntax to describe a <a href="address_for_an_index_search.html" >search on a named index</a> .</p>
+    <p>A search should only be requested by a client when the index document itself has been descibed as an index using the<a href="html_tags.html#IsIndex" > ISINDEX tag</a> .</p>
+
+    <h2>Response</h2>
+    <p>The response to a simple GET request is a message in hypertext mark-up language ( <a href="html.html" >HTML</a> ). This is a byte stream of ASCII characters.</p>
+    <p>Lines shall be delimited by an optional carriage return followed by a mandatory line feed chararcter. The client should not assume that the carriage return will be present. Lines may be of any length. Well-behaved servers should retrict line length to 80 characters excluding the CR LF pair.</p>
+    <p>The format of the message is HTML - that is, a trimmed SGML document. Note that this format allows for menus and hit lists to be returned as hypertext. It also allows for plain ASCII text to be returned following the <a href="html_tags.html#plaintext" >PLAINTEXT tag</a> .</p>
+    <p>The message is terminated by the closing of the connection by the server.</p>
+    <p>Well-behaved clients will read the entire document as fast as possible. The client shall not wait for user action (output paging for example) before reading the whole of the document. The server may impose a timeout of the order of 15 seconds on inactivity.</p>
+    <p>Error responses are supplied in human readable text in HTML syntax. There is no way to distinguish an error response from a satisfactory response except for the content of the text.</p>
+
+    <h2>Disconnection</h2>
+    <p>The TCP-IP connection is broken by the server when the whole document has been transferred.</p>
+    <p>The client may abort the transfer by breaking the connection before this, in which case the server shall not record any error condition.</p>
+    <p>Requests are <a href="hypertext_transfer_protocol.html#idempotent" >idempotent</a> . The server need not store any information about the request after disconnection.</p>
+
+    <p>_________________________________________________________________</p>
+
+    <p><a href="disclaimer.html" >Tim BL</a></p>
+    
+</body>
+</html>

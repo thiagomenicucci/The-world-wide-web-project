@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview -- /Daemon</title>
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>W3 Server Software</h1>
+
+    <p>A <a href="index.html">W3</a> server, like the ftp <a href="hypertextTerms.html#daemon">daemon</a> , is a program which responds to an incoming tcp connection and provides a service to the caller.There are many varieties of W3 server software to serve different forms of data.</p>
+
+    <h2>The basic daemon</h2>
+
+    <p>The basic W3 daemon program serves files already in hypertext or plain text. This daemon then is used as a basis for many other types of server and gateway. Documentation includes:</p>
+
+    <ul>
+        <li><a href="www_daemon_user_guide.html">User guide</a></li>
+        <li><a href="w3_server_internals.html">Internals</a> -- a description of the code</li>
+    </ul>
+
+    <p>Much of the above may also apply in whole or part to other servers mentioned below. Whatever server you are running, you will probably be interested in:</p>
+
+    <ul>
+        <li><a href="w3_tools.html">Tools for information providers</a></li>
+    </ul>
+
+    <h2>Making a new server</h2>
+
+    <p>This daemon is often used as a basis for a more specific server for a given application. A server which allows a world of data to be seen as part of the W3 universe is known as a gateway. (Most servers could therefore be regarded as gateways, but the term implies some conversion or mapping between dissimilar worlds) . For short tutorials with examples, see:</p>
+
+    <ul>
+        <li><a href="writing_a_server_in_c.html">Writing a server in C</a></li>
+        <li><a href="shell_server_for_http.html">Writing a server as a script</a></li>
+    </ul>
+    
+    <p>It is a good idea to pick the basic daemon or one of the servers below as a starting point when making a new server.</p>
+
+    <h2>Other servers and Gateways</h2>
+
+    <p>These are servers which provide data extracted from other systems. they are built using code from the basic daemon, or scripts.</p>
+
+    <dt><a href="the_find_server.html">FIND gateway</a></dt>
+    <dd>for CERN/VM XFIND which calls a REXX exec to get the information from the XFIND system running on the CERNVM mainframe.</dd>
+
+    <dt><a href="vms_server.html">VMS Help gateway</a></dt>
+    <dd>This allows any VMS help files to be made available to WWW clients. Runs on VAX/VMS.</dd>
+
+    <dt><a href="gateway.html">WAISGate</a></dt>
+    <dd>A gateway to information available using the W.A.I.S. protocol.</dd>
+
+    <dt><a href="dcl_server.html">DCL Server</a></dt>
+    <dd>A server for VMS systems which allows you to write a gateway to your own favorite information system using DCL.</dd>
+
+    <dt><a href="system33.html">System33</a></dt>
+    <dd>A (big) csh script server providing data including Xerox System33 documents, man pages in plain text, phone numbers, etc. etc...!</dd>
+
+    <dt><a href="oracle_server.html">Oracle</a></dt>
+    <dd>A generic server to oracle. Could be used as a basis for gateways to specific Oracle databases.</dd>
+
+    <dt><a href="geography_gateway.html">Geography</a></dt>
+    <dd>Gateway to the</dd>
+
+    <p>Geography server at U Michigan</p>
+
+    <p><a href="disclaimer.html">Tim BL</a></p>
+
+</body>
+</html>
